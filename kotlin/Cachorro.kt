@@ -20,7 +20,7 @@ class Cachorro(
     fun age() {
         while (true) {
             try {
-                print("Digite a idade: ")
+                print("Digite a idade em anos (em caso de menos de 1 ano, digite 0): ")
                 idade = readLine()!!.toInt()
                 break
 
@@ -31,9 +31,9 @@ class Cachorro(
     }
 
     override fun obrig() {
-        if (idade <1) {
+        if (idade < 1) {
             //println("Vacinação obrigatória: ")
-            println("Como $nome tem menos de 1 ano. \nDigite a idade em meses: ")
+            print("Como $nome tem menos de 1 ano, digite a idade em meses: ")
 
             while (true) {
                 try {
@@ -46,14 +46,14 @@ class Cachorro(
                 }
             }
             if (idade in 2..3) {
-                println("$nome pode tomar a primeira dose das vacinas:\n")
+                println("\n$nome pode tomar a primeira dose das vacinas:\n")
                 listaCachorro.forEach {
                     println(it)
                 }
 
 
             } else if (idade in 4..12) {
-                println("$nome deve tomar:\n")
+                println("\n$nome deve tomar:\n")
                 listaCachorro.add(
                     "Antirrábica: obrigatória no território nacional," +
                             " protege seu pet de uma infecção viral grave e sem tratamento para cachorros."
@@ -65,7 +65,7 @@ class Cachorro(
 
 
             } else {
-                println("Se o seu bichinho ainda não se vacinou, ele está com déficit de vacinação, será necessário:\n")
+                println("\nSe o seu bichinho ainda não se vacinou, ele está com déficit de vacinação, será necessário:\n")
                 listaCachorro.add(
                     "Antirrábica: obrigatória no território nacional," +
                             " protege seu pet de uma infecção viral grave e sem tratamento para cachorros."
@@ -76,7 +76,7 @@ class Cachorro(
                 }
             }
         } else {
-            println("Se o seu bichinho ainda não se vacinou, ele está com déficit de vacinação, será necessário:\n")
+            println("\nSe o seu bichinho ainda não se vacinou, ele está com déficit de vacinação, será necessário:\n")
             listaCachorro.add(
                 "Antirrábica: obrigatória no território nacional," +
                         " protege seu pet de uma infecção viral grave e sem tratamento para cachorros."
